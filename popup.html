@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Zone Typing Hack</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 200px;
+      padding: 16px;
+      margin: 0;
+      background: #1e1e24;
+      color: #fff;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 16px;
+      text-align: center;
+      color: #4a9eff;
+    }
+    .control-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+    }
+    /* Toggle Switch CSS */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #555;
+      transition: .3s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #4a9eff;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .label-text {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Zone Typing Hack</h2>
+  <div class="control-group">
+    <span class="label-text">判定ハック</span>
+    <label class="switch">
+      <input type="checkbox" id="hackToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

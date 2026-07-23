@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Zone Typing Hack",
+  "version": "1.0.0",
+  "description": "Auto-typer and Logic Hack for zone-typing.pages.dev",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://zone-typing.pages.dev/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://zone-typing.pages.dev/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["https://zone-typing.pages.dev/*"]
+    }
+  ]
+}
